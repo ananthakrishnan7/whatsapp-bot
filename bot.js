@@ -9,14 +9,14 @@ const fs = require("fs")
 const path = require("path")
 const { handleMessages } = require("./Utilis/msg")
 const chalk = require("chalk")
-const { DataTypes } = require("sequelize")
-const config = require("./config")
-const { WAConnection, MessageType } = require("@adiwajshing/baileys")
+ = require("sequelize")
+const
+iwajshing/baileys")
 const { StringSession } = require("./Utilis/whatsasena")
-const { getJson } = require("./Utilis/download")
-const { customMessageScheduler } = require("./Utilis/schedule")
+)
+/schedule")
 const { prepareGreetingMedia } = require("./Utilis/greetings")
-const { groupMuteSchuler, groupUnmuteSchuler } = require("./Utilis/groupmute")
+equire("./Utilis/groupmute")
 const { PluginDB } = require("./plugins/sql/plugin")
 
 // Sql
@@ -145,7 +145,7 @@ ${chalk.blue.italic.bgBlack("ℹ️ Connecting to WhatsApp... Please wait.")}`)
     })
 
     console.log(chalk.green.bold("✅ Plugins installed!"))
-    await conn.sendMessage(
+    
       conn.user.jid,
       await startMessage(),
       MessageType.text,
@@ -170,18 +170,18 @@ ${chalk.blue.italic.bgBlack("ℹ️ Connecting to WhatsApp... Please wait.")}`)
     await conn.connect()
   } catch (e) {
     if (!nodb) {
-      console.log(chalk.red.bold("Eski sürüm stringiniz yenileniyor..."))
+      cons
       conn.loadAuthInfo(Session.deCrypt(config.SESSION))
       try {
         await conn.connect()
       } catch (e) {
         return
       }
-    } else console.log(`${e.message}`)
+
   }
 }
 
-;(async () => {
-  await prepareGreetingMedia()
+{
+
   whatsAsena(await waWebVersion())
 })()
